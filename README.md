@@ -1,3 +1,30 @@
+## Environment
+Ionic:
+
+   Ionic CLI          : 5.4.13 (/home/lordnino/.nvm/versions/node/v10.17.0/lib/node_modules/ionic)
+   Ionic Framework    : ionic-angular 3.9.2
+   @ionic/app-scripts : 3.2.4
+
+Cordova:
+
+   Cordova CLI       : 8.1.2 (cordova-lib@8.1.1)
+   Cordova Platforms : android 6.4.0
+   Cordova Plugins   : cordova-plugin-ionic 2.0.4, cordova-plugin-ionic-keyboard 2.1.3, cordova-plugin-ionic-webview 1.2.1, (and 17 
+other plugins)
+
+Utility:
+
+   cordova-res : not installed
+   native-run  : not installed
+
+System:
+
+   Android SDK Tools : 26.1.1 (/home/lordnino/Android/Sdk)
+   NodeJS            : v10.17.0 (/home/lordnino/.nvm/versions/node/v10.17.0/bin/node)
+   npm               : 6.11.3
+   OS                : Linux 5.0
+
+
 ## Documentation
 https://bit.ly/ion2fullapp-elite-version-documentation
 
