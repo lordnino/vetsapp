@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'PROFILE' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="profile-content">
+  <div class="user-details">
+    <ion-row class="user-main-data-row">
+      <ion-col no-padding width-33>
+        <preload-image class="user-image" [ratio]="{w:1, h:1}" [(src)]="profile.user.image"></preload-image>
+      </ion-col>
+      <ion-col no-padding>
+        <h2 class="user-name">{{profile.user.name}}</h2>
+        <span class="user-location">{{profile.user.location}}</span>
+      </ion-col>
+    </ion-row>
+  </div>
+  <h4 class="categories-title">أعضاء هيئة المكتب</h4>
+  <div [ngSwitch]="display" class="user-content">
+    <div *ngSwitchCase="'list'" class="list-view">
+      <div class="list-item" *ngFor="let post of profile.posts">
+        <ion-card>
+          <ion-card-content>
+            <p class="item-text">
+              {{post.description}}
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+  <h4 class="categories-title">أعضاء المجلس</h4>
+  <div [ngSwitch]="display" class="user-content">
+    <div *ngSwitchCase="'list'" class="list-view">
+      <div class="list-item" *ngFor="let post of profile.vets">
+        <ion-card>
+          <ion-card-content>
+            <p class="item-text">
+              {{post.description}}
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+</ion-content>

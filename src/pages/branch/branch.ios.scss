@@ -1,0 +1,8 @@
+ion-app.ios {
+	branch-page {
+		.user-content-segment
+		{
+			@include segment-button-ios-styles();
+		}
+	}
+}

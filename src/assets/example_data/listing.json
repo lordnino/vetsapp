@@ -1,0 +1,64 @@
+{
+    "banner_image": "./assets/images/listing/background.png",
+    "banner_title": " ",
+    "populars": [
+        {
+            "title": "Air Sports",
+            "image": "./assets/images/listing/300x300AirSports.png"
+        },
+        {
+            "title": "Water Sports",
+            "image": "./assets/images/listing/300x300WaterSports.png"
+        },
+        {
+            "title": "Beach Sports",
+            "image": "./assets/images/listing/300x300BeachSports.png"
+        },
+        {
+            "title": "Extreme Sports",
+            "image": "./assets/images/listing/300x300ExtremeSports.png"
+        },
+        {
+            "title": "Athletic Sports",
+            "image": "./assets/images/listing/300x300AthleticSports.png"
+        },
+        {
+            "title": "Combat Sports",
+            "image": "./assets/images/listing/300x300CombatSports.png"
+        }
+    ],
+    "categories": [
+        {
+            "title": "About us",
+            "image": "./assets/images/listing/200x200basquet.png"
+        },
+        {
+            "title": "Services",
+            "image": "./assets/images/listing/200x200boxeo.png"
+        },
+        {
+            "title": "Committees",
+            "image": "./assets/images/listing/200x200crossfit.png"
+        },
+        {
+            "title": "Scientific Center",
+            "image": "./assets/images/listing/200x200futbol.png"
+        },
+        {
+            "title": "Syndicates",
+            "image": "./assets/images/listing/200x200running.png"
+        },
+        {
+            "title": "Veterinary Authorities",
+            "image": "./assets/images/listing/200x200swimming.png"
+        },
+        {
+            "title": "Private Institutions",
+            "image": "./assets/images/listing/200x200yoga.png"
+        },
+       {
+            "title": "Contact us",
+            "image": "./assets/images/listing/200x200yoga2.png"
+        }
+    ]
+}

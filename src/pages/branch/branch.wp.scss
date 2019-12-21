@@ -1,0 +1,10 @@
+ion-app.wp {
+	branch-page {
+		.user-content-segment
+		{
+			justify-content: center;
+
+			@include segment-button-wp-styles();
+		}
+	}
+}

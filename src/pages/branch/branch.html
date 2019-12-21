@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{'Area1' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="branch-content">
+  
+  <div [ngSwitch]="display" class="user-content">
+    <div *ngSwitchCase="'list'" class="list-view">
+      <div class="list-item" *ngFor="let post of branch.posts">
+        <span class="item-date">{{post.date}}</span>
+        <ion-card>
+          <preload-image [ratio]="{w:1, h:1}" [src]="post.image" title=""></preload-image>
+          <ion-card-content>
+            <p class="item-text">
+              {{post.description}}
+            </p>
+            <p class="item-text">
+              {{post.likes}}
+            </p>
+            <p class="item-text">
+              {{post.comments}}
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+    <div *ngSwitchCase="'grid'" class="grid-view">
+      <ion-row wrap class="grid-row">
+        <ion-col width-33 class="grid-item" *ngFor="let post of branch.posts">
+          <preload-image [ratio]="{w:1, h:1}" [src]="post.image" title="ion2FullApp"></preload-image>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>
