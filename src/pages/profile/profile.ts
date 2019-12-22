@@ -16,6 +16,10 @@ export class ProfilePage {
   display: string;
   profile: ProfileModel = new ProfileModel();
 
+  general: boolean = false;
+  sec: boolean = false;
+  third: boolean = false;
+
   constructor(
     public menu: MenuController,
     public app: App,
@@ -24,6 +28,18 @@ export class ProfilePage {
     public socialSharing: SocialSharing
   ) {
     this.display = "list";
+  }
+
+  switchGeneView() {
+    this.general = !this.general;
+  }
+
+  switchSecView() {
+    this.sec = !this.sec;
+  }
+
+  switchThirdView() {
+    this.third = !this.third;
   }
 
   ionViewDidLoad() {

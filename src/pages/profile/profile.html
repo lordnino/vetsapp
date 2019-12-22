@@ -11,7 +11,11 @@
   <div class="user-details">
     <ion-row class="user-main-data-row">
       <ion-col no-padding width-33>
-        <preload-image class="user-image" [ratio]="{w:1, h:1}" [(src)]="profile.user.image"></preload-image>
+        <preload-image
+          class="user-image"
+          [ratio]="{w:1, h:1}"
+          [(src)]="profile.user.image"
+        ></preload-image>
       </ion-col>
       <ion-col no-padding>
         <h2 class="user-name">{{profile.user.name}}</h2>
@@ -19,7 +23,267 @@
       </ion-col>
     </ion-row>
   </div>
-  <h4 class="categories-title">أعضاء هيئة المكتب</h4>
+  <div class="accordion-container">
+    <div class="accordion-head" (click)="switchGeneView()">
+      <span class="head">النقيب العام</span>
+      <span *ngIf="!general" class="icon"
+        ><i class="fa fa-chevron-down" aria-hidden="true"></i
+      ></span>
+      <span *ngIf="general" class="icon"
+        ><i class="fa fa-chevron-up" aria-hidden="true"></i
+      ></span>
+    </div>
+    <div class="accordion-body" *ngIf="general">
+      <ion-grid class="name">
+        <ion-row>
+          <ion-col col-2>
+            أ.د/
+          </ion-col>
+          <ion-col col-10>
+            خالد فاروق محمد عبدالحميد العامرى
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div class="accordion-container">
+    <div class="accordion-head" (click)="switchSecView()">
+      <span class="head">أعضاء المجلس</span>
+      <span *ngIf="!sec" class="icon"
+        ><i class="fa fa-chevron-down" aria-hidden="true"></i
+      ></span>
+      <span *ngIf="sec" class="icon"
+        ><i class="fa fa-chevron-up" aria-hidden="true"></i
+      ></span>
+    </div>
+    <div class="accordion-body sec" *ngIf="sec">
+      <ion-grid class="name">
+        <ion-row>
+          <ion-col col-4>
+            الوكيل
+          </ion-col>
+          <ion-col col-8>
+            د/ البدرى أحمد ضيف محمد
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-4>
+            الأمين العام
+          </ion-col>
+          <ion-col col-8>
+            د/ السيد ابراهيم على عبيد
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-4>
+            أمين الصندوق
+          </ion-col>
+          <ion-col col-8>
+            د/ عبدالعزيز محمد الجوهرى
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-4>
+            الأمين العام المساعد
+          </ion-col>
+          <ion-col col-8>
+            د/ محمد شفيق محمد الهادى
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-4>
+            أمين الصندوق المساعد
+          </ion-col>
+          <ion-col col-8>
+            د/ محمود حسين عفيفى على
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div class="accordion-container">
+    <div class="accordion-head" (click)="switchThirdView()">
+      <span class="head">أعضاء المجلس</span>
+      <span *ngIf="!third" class="icon"
+        ><i class="fa fa-chevron-down" aria-hidden="true"></i
+      ></span>
+      <span *ngIf="third" class="icon"
+        ><i class="fa fa-chevron-up" aria-hidden="true"></i
+      ></span>
+    </div>
+    <div class="accordion-body sec" *ngIf="third">
+      <ion-grid class="name">
+        <ion-row>
+          <ion-col col-6>
+            د/ أحمد جمال الدين الغندور
+          </ion-col>
+          <ion-col col-6>
+            <p>مقرر اللجنة الاجتماعية</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/ على سعد على محمد
+          </ion-col>
+          <ion-col col-6>
+            <p>مقرر لجنة النقابات الفرعية</p>
+            <p>مقرر لجنه الانتاج الحيوانى</p>
+            <p>مقرر لجنة الدواب</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            أ.د/ مصطفي فايز محمد حسن
+          </ion-col>
+          <ion-col col-6>
+            <p>مدير المركز العلمي</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/ يوسف مصطفي ابراهيم على العبد
+          </ion-col>
+          <ion-col col-6>
+            <p>مقرر لجنة الأدوية و الشركات</p>
+            <p>مقرر لجنة الثروة السمكية</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/شيرين على زكي احمد
+          </ion-col>
+          <ion-col col-6>
+            <p>مقررة لجنة سلامة الغذاء و المتابعة الميدانية</p>
+            <p>مقررة لجنة القوافل البيطرية</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/محمد فكري القرش
+          </ion-col>
+          <ion-col col-6>
+            <p>مقرر لجنة التنمية البشرية</p>
+            <p>مقرر لجنة التطوير المهني وميثاق الشرف</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/محمد اشرف عويس محمود
+          </ion-col>
+          <ion-col col-6>
+            <p>مقرر لجنة الشباب</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            أ.د / حسن زكي راتب احمد
+          </ion-col>
+          <ion-col col-6>
+            <p>مقرر لجنة الصناعات البيطرية</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/ حمدي أحمد شاكر أحمد
+          </ion-col>
+          <ion-col col-6>
+            <p>مدير صندوق التكافل الاجتماعى</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/ محمد صدقي السيد دهمش
+          </ion-col>
+          <ion-col col-6>
+            <p>أمين صندوق التكافل الاجتماعى</p>
+            <p>مقرر لجنة الاسكان</p>
+            <p>مقرر لجنة المحاجر</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/ الحسيني محمد عوض علي
+          </ion-col>
+          <ion-col col-6>
+            <p>مقرر لجنة المنشآت البيطرية</p>
+            <p>مقرر لجنة حقوق الحيوان و الحيوان البرية</p>
+            <p>مقرر لجنة اعداد القيادات</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            أ.د/ نبيلة السيد إبراهيم أبوزيد
+          </ion-col>
+          <ion-col col-6>
+            <p>رئيس المركز العلمي</p>
+            <p>مقررة اللجنة العلمية</p>
+            <p>مقررة لجنة التحاليل الطبية</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/ شرف الدين فيصل شرف
+          </ion-col>
+          <ion-col col-6>
+            <p>مقرر لجنة تنمية الموارد والمشرعات</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/ ناجي علي عبدالله سلام
+          </ion-col>
+          <ion-col col-6>
+            <p>مقرر لجنة العلاج</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/ محمد نبيل جمعه محمد
+          </ion-col>
+          <ion-col col-6>
+            <p>مقرر لجنة تكنولوجيا المعلومات</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/ زكريا حسن حسن الشناوي
+          </ion-col>
+          <ion-col col-6>
+            <p>مقرر لجنة الثروة الداجنة</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/ أشرف قاسم أحمد أحمد
+          </ion-col>
+          <ion-col col-6>
+            <p>مقرر لجنة الشكاوى و الاقتراحات</p>
+            <p>مقرر لجنة الرياضة البيطرية</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/ عبير أحمد موافي
+          </ion-col>
+          <ion-col col-6>
+            <p>مقررة لجنة الامصال واللقاحات</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            د/ محمود حسين عفيفي علي
+          </ion-col>
+          <ion-col col-6>
+            <p>مقرر لجنة ريادة الاعمال</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <!-- <h4 class="categories-title">أعضاء هيئة المكتب</h4>
   <div [ngSwitch]="display" class="user-content">
     <div *ngSwitchCase="'list'" class="list-view">
       <div class="list-item" *ngFor="let post of profile.posts">
@@ -46,5 +310,5 @@
         </ion-card>
       </div>
     </div>
-  </div>
+  </div> -->
 </ion-content>

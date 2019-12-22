@@ -109,6 +109,9 @@ import { ImagePicker } from '@ionic-native/image-picker';
 import { Crop } from '@ionic-native/crop';
 import { EmailComposer } from '@ionic-native/email-composer';
 
+import {AccordionModule} from "ngx-accordion";
+
+
 //Angular Fire
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -209,7 +212,8 @@ export function createTranslateLoader(http: HttpClient) {
     AngularFirestoreModule,
     AngularFireAuthModule,
 		VideoPlayerModule,
-		ValidatorsModule
+    ValidatorsModule,
+    AccordionModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

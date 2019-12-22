@@ -46,7 +46,7 @@ export class onlineServicesPage {
   }
   OpenUrl()
   {
-  const browser = this.iab.create('https://payments.egy-vet-synd.org/vetonline/');
+  const browser = this.iab.create('https://payments.egy-vet-synd.org/vetonline/', '_blank');
   browser.show()
   }
 
