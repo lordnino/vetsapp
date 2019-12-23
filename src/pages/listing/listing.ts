@@ -13,6 +13,8 @@ import { WordpressMenuPage } from '../wordpress-integration/wordpress-menu/wordp
 import { onlineServicesPage } from '../onlineServices/onlineServices';
 import { LayoutsPage } from '../layouts/layouts';
 import { FirebaseLoginPage } from '../firebase-integration/firebase-login/firebase-login';
+import { BeAMemberPage } from '../be-a-member/be-a-member';
+import { PrivateInstitutionsPage } from '../private-institutions/private-institutions';
 
 @Component({
   selector: 'listing-page',
@@ -58,9 +60,11 @@ export class ListingPage {
           break;
       case "Veterinary Authorities"://كيف تصبح عضو 
           //this.nav.push(WordpressMenuPage);
+          this.nav.push(BeAMemberPage);
           break;
       case "Private Institutions"://الصناديق التكافلية 
           //this.nav.push(WordpressMenuPage);
+          this.nav.push(PrivateInstitutionsPage);
           break;
       case "Contact us":// إتصل بنا
           this.nav.push(FirebaseLoginPage);

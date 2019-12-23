@@ -1,33 +1,16 @@
 <ion-header class="login-header auth-header">
   <ion-navbar>
-    <ion-title>{{'SIGN_IN' | translate}}</ion-title>
+    <ion-title>{{'FIREBASE_INTEGRATION' | translate}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="login-content auth-content">
-  <form class="login-form auth-form" [formGroup]="login" (ngSubmit)="doLogin(login.value)">
-    <ion-item>
-      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
-    </ion-item>
-    <show-hide-container>
-      <ion-item>
-        <ion-input type="password" placeholder="Password" formControlName="password" show-hide-input></ion-input>
-      </ion-item>
-    </show-hide-container>
-    <button ion-button block class="auth-action-button login-button" type="submit" [disabled]="!login.valid">{{'LOG_IN' | translate}}</button>
-  </form>
-  <ion-row class="alt-options">
-    <ion-col no-padding width-50>
-    </ion-col>
-    <ion-col no-padding width-50>
-      <button ion-button block clear class="signup-button" (click)="goToSignup()">{{'SIGN_UP!' | translate}}</button>
-    </ion-col>
-  </ion-row>
-  <label class="error-message">{{errorMessage}}</label>
-  <p class="auth-divider">
-    Or
-  </p>
-  <button ion-button block class="facebook-auth-button" (click)="doFacebookLogin()">Log in with Facebook</button>
-  <button ion-button block class="google-auth-button" (click)="doGoogleLogin()">Log in with Google</button>
-  <button ion-button block class="twitter-auth-button" (click)="doTwitterLogin()">Log in with Twitter</button>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.0672528532123!2d31.215610415632455!3d30.034928381885763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458472a65b10f01%3A0x167e7bc853e6c9a1!2sTakamul%20Systems!5e0!3m2!1sen!2seg!4v1577077239353!5m2!1sen!2seg"
+    width="600"
+    height="450"
+    frameborder="0"
+    style="border:0;"
+    allowfullscreen=""
+  ></iframe>
 </ion-content>

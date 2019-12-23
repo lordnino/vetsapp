@@ -14,28 +14,66 @@ import 'rxjs/Rx';
 })
 export class onlineServicesPage {
   display: string;
- // profile: ProfileModel = new ProfileModel();
+  // profile: ProfileModel = new ProfileModel();
+
+  general: boolean = false;
+  second: boolean = false;
+  third: boolean = false;
+  fourth: boolean = false;
+  fifth: boolean = false;
+  sixth: boolean = false;
+  seventh: boolean = false;
+  eigth: boolean = false;
+  ninth: boolean = false;
 
   constructor(
     public menu: MenuController,
     public app: App,
     public navParams: NavParams,
     private iab: InAppBrowser,
-   // public profileService: ProfileService,
+    // public profileService: ProfileService,
     public socialSharing: SocialSharing
   ) {
     this.display = "list";
   }
 
-  // ionViewDidLoad() {
-  //   this.profileService.getData()
-  //     .then(data => {
-  //       this.profile.user = data.user;
-  //       this.profile.following = data.following;
-  //       this.profile.followers = data.followers;
-  //       this.profile.posts = data.posts;
-  //     });
-  // }
+  switchGeneView() {
+    this.general = !this.general;
+  }
+  
+  switchSecView() {
+    this.second = !this.second;
+  }
+  
+  switchThirdView() {
+    this.third = !this.third;
+  }
+  
+  switchFourthView() {
+    this.fourth = !this.fourth;
+  }
+  
+  switchFifthView() {
+    this.fifth = !this.fifth;
+  }
+  
+  switchSixthView() {
+    this.sixth = !this.sixth;
+  }
+  
+  switchSevenView() {
+    this.seventh = !this.seventh;
+  }
+  
+  switchEightView() {
+    this.eigth = !this.eigth;
+  }
+  
+  switchNinethView() {
+    this.ninth = !this.ninth;
+  }
+  
+  
 
   goToFollowersList() {
     // close the menu when clicking a link from the menu
@@ -44,10 +82,9 @@ export class onlineServicesPage {
     //   list: this.profile.followers
     // });
   }
-  OpenUrl()
-  {
-  const browser = this.iab.create('https://payments.egy-vet-synd.org/vetonline/', '_blank');
-  browser.show()
+  OpenUrl() {
+    const browser = this.iab.create('https://payments.egy-vet-synd.org/vetonline/', '_blank');
+    browser.show()
   }
 
   goToFollowingList() {
@@ -73,15 +110,15 @@ export class onlineServicesPage {
   }
 
   sharePost(post) {
-   //this code is to use the social sharing plugin
-   // message, subject, file, url
-   this.socialSharing.share(post.description, post.title, post.image)
-   .then(() => {
-     console.log('Success!');
-   })
-   .catch(() => {
-      console.log('Error');
-   });
+    //this code is to use the social sharing plugin
+    // message, subject, file, url
+    this.socialSharing.share(post.description, post.title, post.image)
+      .then(() => {
+        console.log('Success!');
+      })
+      .catch(() => {
+        console.log('Error');
+      });
   }
 
 }

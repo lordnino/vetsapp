@@ -116,6 +116,10 @@ import {AccordionModule} from "ngx-accordion";
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { PreviousCouncilsPage } from '../pages/previous-councils/previous-councils';
+import { CouncilGoalsPage } from '../pages/council-goals/council-goals';
+import { BeAMemberPage } from '../pages/be-a-member/be-a-member';
+import { PrivateInstitutionsPage } from '../pages/private-institutions/private-institutions';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -180,6 +184,8 @@ export function createTranslateLoader(http: HttpClient) {
 		WordpressLoginPage,
     WordpressMenuPage,
     BlogCategoriesPage,
+    PreviousCouncilsPage,
+    CouncilGoalsPage,
 
     //custom components
     PreloadImage,
@@ -189,7 +195,9 @@ export function createTranslateLoader(http: HttpClient) {
     ColorRadio,
     CounterInput,
     Rating,
-    GoogleMap
+    GoogleMap,
+    BeAMemberPage,
+    PrivateInstitutionsPage
   ],
   imports: [
     BrowserModule,
@@ -268,7 +276,11 @@ export function createTranslateLoader(http: HttpClient) {
     BlogCustomPagePage,
 		WordpressLoginPage,
     WordpressMenuPage,
-    BlogCategoriesPage
+    BlogCategoriesPage,
+    PreviousCouncilsPage,
+    CouncilGoalsPage,
+    BeAMemberPage,
+    PrivateInstitutionsPage
   ],
   providers: [
     FeedService,

@@ -1,39 +1,41 @@
 firebase-login-page {
-	.error-message
- 	{
-   	color: red;
- 	}
-	.login-content
-	{
-		.alt-options
-		{
-			.button
-			{
-				margin: 0px;
-				padding: 0px;
-				font-size: 1.4rem;
-			}
+  .error-message {
+    color: red;
+  }
+  .login-content {
+    .alt-options {
+      .button {
+        margin: 0px;
+        padding: 0px;
+        font-size: 1.4rem;
+      }
 
-			.forgot-button
-			{
-				color: $white-d;
+      .forgot-button {
+        color: $white-d;
 
-				.button-inner
-				{
-					justify-content: flex-start;
-				}
-			}
+        .button-inner {
+          justify-content: flex-start;
+        }
+      }
 
-			.signup-button
-			{
-				font-weight: 500;
-				color: $theme-color-2;
+      .signup-button {
+        font-weight: 500;
+        color: $theme-color-2;
 
-				.button-inner
-				{
-					justify-content: flex-end;
-				}
-			}
-		}
-	}
+        .button-inner {
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+
+  #map {
+	width: 100%;
+	height: 100%;
+  }
+
+  iframe {
+	width: 100%;
+    height: 300px;
+  }
 }

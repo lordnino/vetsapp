@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'PROFILE' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>السنة</ion-label>
+      <ion-select [(ngModel)]="start_year" (ionChange)="yearChange($event)">
+        <ion-option value="all">الكل</ion-option>
+        <ion-option *ngFor="let year of years" [value]="year">{{year}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <div class="accordion-container" *ngFor="let council of filtered_councils?.data; let index = index">
+    <div class="accordion-head" (click)="toogleCouncil(index)">
+      <span class="head">المجلس سنة {{council?.year}}</span>
+      <span *ngIf="!council?.toggle" class="icon"
+        ><i class="fa fa-chevron-down" aria-hidden="true"></i
+      ></span>
+      <span *ngIf="council?.toggle" class="icon"
+        ><i class="fa fa-chevron-up" aria-hidden="true"></i
+      ></span>
+    </div>
+    <div class="accordion-body" *ngIf="council?.toggle">
+      <ion-grid class="name">
+        <ion-row *ngFor="let coun of council?.data">
+          <ion-col col-6>
+            {{coun?.name}}
+          </ion-col>
+          <ion-col col-6>
+            {{coun?.title}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

@@ -11,7 +11,7 @@
       <div class="list-item" *ngFor="let post of branch.posts">
         <span class="item-date">{{post.date}}</span>
         <ion-card>
-          <preload-image [ratio]="{w:1, h:1}" [src]="post.image" title=""></preload-image>
+          <!-- <preload-image [ratio]="{w:1, h:1}" [src]="post.image" title=""></preload-image> -->
           <ion-card-content>
             <p class="item-text">
               {{post.description}}
@@ -29,7 +29,7 @@
     <div *ngSwitchCase="'grid'" class="grid-view">
       <ion-row wrap class="grid-row">
         <ion-col width-33 class="grid-item" *ngFor="let post of branch.posts">
-          <preload-image [ratio]="{w:1, h:1}" [src]="post.image" title="ion2FullApp"></preload-image>
+          <!-- <preload-image [ratio]="{w:1, h:1}" [src]="post.image" title="ion2FullApp"></preload-image> -->
         </ion-col>
       </ion-row>
     </div>

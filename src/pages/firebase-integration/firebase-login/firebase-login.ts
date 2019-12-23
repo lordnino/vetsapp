@@ -5,6 +5,8 @@ import { FirebaseSignupPage } from '../firebase-signup/firebase-signup';
 import { FirebaseTabsNavigationPage } from '../firebase-tabs-navigation/firebase-tabs-navigation';
 import { FirebaseAuthService } from '../firebase-auth.service';
 
+
+
 @Component({
   selector: 'firebase-login-page',
   templateUrl: 'firebase-login.html'

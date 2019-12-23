@@ -8,187 +8,401 @@
 </ion-header>
 
 <ion-content class="profile-content">
-  <!-- <div class="user-details">
-    <ion-row class="user-main-data-row">
-      <ion-col no-padding width-33>
-        <preload-image class="user-image" [ratio]="{w:1, h:1}" [(src)]="profile.user.image"></preload-image>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <button class="button" ion-button block (click)="OpenUrl();">
+          الدفع الالكترونى
+        </button>
       </ion-col>
-      <ion-col no-padding>
-        <h2 class="user-name">{{profile.user.name}}</h2>
-        <span class="user-location">{{profile.user.location}}</span>
+      <ion-col col-6>
+        <button class="button" ion-button block (click)="OpenUrl();">
+          نحديث البيانات
+        </button>
       </ion-col>
     </ion-row>
-  </div> -->
-  <button class="button" ion-button block (click)='OpenUrl();'>إنقر هنا</button>
-  <h3 style="text-align: center;"><strong>الخدمات المقدمة من نقابة الأطباء البيطريين</strong></h3>
+  </ion-grid>
+
+  <h3 style="text-align: center;">
+    <strong>الخدمات المقدمة من نقابة الأطباء البيطريين</strong>
+  </h3>
+
   <div class="user-details">
-      <p><strong>اولاً : الأوراق المطلوبة للقيد بسجلات النقابة ووزارة الصحة :-</strong></p>
-      <p>عدد (2) اصل شهادة البكالوريوس</p>
-      <p>عدد (2) صورة بطاقة الرقم القومي</p>
-      <p>عدد (2) صورة الموقف من التجنيد للذكور + الأصل للإطلاع</p>
-      <p>عدد (1) فيش وتشبية حديث موجه للنقابة</p>
-      <p>عدد (5) صورة شخصية 4 *&nbsp; 6</p>
-      <p>عدد (2) صورة شهادة الميلاد</p>
-      <p>مبلغ 400 جنية تقريبا للقيد بالنقابة ووزارة الصحة .</p>
-      <p><strong>ثانياً : الأوراق المطلوبة للقيد بسجل الأخصائيين بالنقابة:-</strong></p>
-      <ul>
-      <li>عدد (1) اصل شهادة التخصص للدبلوم – الماجستير – الدكتوراة وصورة شخصية حديثة 4 * 6</li>
-      <li>سداد مبلغ 200 جنية رسم تسجيل بسجل الأخصائيين ( اول مرة )</li>
-      <li>سداد مبلغ 100 جنية استخراج شهادة .</li>
-      <li>بشرط سداد اشتراك النقابة العامة حتى العام الحالي</li>
-      </ul>
-      <p><strong>ثالثاً : الأوراق المطلوبة للقيد بسجل العيادات البيطرية : </strong></p>
-      <ul>
-      <li>عقد ايجار موثق بالشهر العقاري موضح به الأستخدام عيادة بيطرية + صورة ضوئية من العقد</li>
-      <li>اصل رسم هندسي موضح به مصدر المياة معتمد من مكتب هندسي</li>
-      <li>سداد اشتراك النقابة حتى العام الحالي</li>
-      <li>صورة البطاقة الضريبية</li>
-      <li>موافقة النقابة الفرعية</li>
-      <li>وصورة شخصية حديثة 4 * 6</li>
-      <li>سداد مبلغ 600 جنية رسم تسجيل العيادة البيطرية اول مرة</li>
-      <li>سداد مبلغ 500 جنية للتجديد</li>
-      </ul>
-      <p><strong>رابعاً : الأوراق المطلوبة لإستخراج ترخيص مزاولة مهنة التحاليل الطبية بوزارة الصحة : </strong></p>
-      <p>1 – صورة البطاقة الشخصية</p>
-      <p>2 – صورة شهادة الميلاد</p>
-      <p>3 – اصل شهادة البكالوريوس</p>
-      <p>4 – نموذج 13 صحة</p>
-      <p>5 – عدد (3) صورة شخصية</p>
-      <p>6 – عدد (1) اصل شهادة التخصص (دبلوم – ماجستير – دكتوراه )</p>
-      <p>7 – المنهج الدراسي لشهادة التخصص</p>
-      <p>8 – اصل شهادة قيد بسجل الإخصائيين بالنقابة .</p>
-      <p>9 – الموقف من التجنيد للذكور ( اصل + صورة )</p>
-      <p>10 – ملف لحفظ المستندات</p>
-      <p>11 – اصل صحيفة الحالة الجنائية موجه باسم الإدارة المركزية للمؤسسات العلاجية والتراخيص الطبية بوزارة الصحة .</p>
-      <p>12 – ايصال اشتراك النقابة العامة والنقابة الفرعية للعام الحالي .</p>
-      <p>13 – رسم تقديم الأوراق 800 جنية شاملة رسوم النقابة .</p>
-      <p><strong>خامساً : الأوراق المطلوبة للإعانات المقدمة من النقابة : – </strong></p>
-      <p>1 – &nbsp;أصل تقرير طبي بالحالة بتاريخ حديث</p>
-      <p>2 – صورة من كارنية النقابة ( ساري )</p>
-      <p>3 – صورة ضوئية من بطاقة الرقم القومي</p>
-      <p>4 – في حالة الولادة القيصرية فقط&nbsp; . صورة طبق الأصل منشهادة ميلاد المولود .</p>
-      <p>5 – إفادة بان العضو غير مشترك بمشروع العلاج + ختم من المشروع على طلب النقابة العامة .</p>
-      <p>6 – تقرير موضح بالولادة القيصرية ( اصل + صورة طبق الاصل )</p>
-      <p>7 – اعتماد الوراق السابقة من النقابة الفرعية التابع لها الطبيب .</p>
-      <p><strong>سادساً : الأعانات المستحقة من النقابة مع عدم الأشتراك في مشروع العلاج :-</strong></p>
-      <table class="table-responsive">
-      <tbody>
-      <tr>
-      <td width="343"><strong>المرض</strong></td>
-      <td width="343"><strong>مبلغ العلاج</strong></td>
-      </tr>
-      <tr>
-      <td width="343"><strong>زراعة الكبد</strong></td>
-      <td width="343">5000 خمسة الاف جنية</td>
-      </tr>
-      <tr>
-      <td width="343"><strong>قوقعة الأذن</strong></td>
-      <td width="343">5000 خمسة الاف جنية</td>
-      </tr>
-      <tr>
-      <td width="343"><strong>زراعة الكلى</strong></td>
-      <td width="343">3000 ثلاثة الاف جنية</td>
-      </tr>
-      <tr>
-      <td width="343"><strong>زراعة قرنية العين</strong></td>
-      <td width="343">3000 ثلاثة الاف جنية</td>
-      </tr>
-      <tr>
-      <td width="343"><strong>القلب المفتوح والاورام</strong></td>
-      <td width="343">3000 ثلاثة الاف جنية</td>
-      </tr>
-      <tr>
-      <td width="343"><strong>عمليات العظام الكبيرة</strong></td>
-      <td width="343">1500 الف وخمسمائة جنية</td>
-      </tr>
-      <tr>
-      <td width="343"><strong>دعامات القلب</strong></td>
-      <td width="343">1000 الف جنية</td>
-      </tr>
-      <tr>
-      <td width="343"><strong>الولادة القيصرية</strong></td>
-      <td width="343">500 خمسمائة جنية</td>
-      </tr>
-      <tr>
-      <td width="343"><strong>الأمراض المزمنة</strong></td>
-      <td width="343">500 خمسمائة جنية</td>
-      </tr>
-      <tr>
-      <td width="343"><strong>الفئات المستفيده</strong></td>
-      <td width="343">الأطباء- الأبناء- الأزواج- الوالدان</td>
-      </tr>
-      <tr>
-      <td colspan="2" width="685"><strong>مع عدم الصرف لمرض السكر والبروسيلا</strong></td>
-      </tr>
-      </tbody>
-      </table>
-      <p>&nbsp;</p>
-      <p><strong>سابعاً : الأوراق المطلوبة لإعانات المهن الطبية : </strong></p>
-      <p>1 – تقرير طبي بالحالة ( اصل + صورة طبق الأصل )</p>
-      <p>2 – صورة طبق الاصل من الرقم القومي وكارنية النقابة .</p>
-      <p>3 – صورة طبق الأصل من شهادة ميلاد المولود في حالة الوضع القيصري .</p>
-      <p>4 – افادة من مشروع العلاج بعدم الأشتراك .</p>
-      <p><strong>ثامناً : الأوراق المطلوبة لإعانات الوفاة من اتحاد المهن الطبية :-</strong></p>
-      <p>1 – صورة طبق الأصل من الرقم القومي للعضو .</p>
-      <p>2 – استمارة أ.ن ( من النقابة العامة )</p>
-      <p>3 – استمارة طلب معاش ( أعضاء – اسر ) من الأتحاد .</p>
-      <p>4 – أصل خطاب من البنك ( الأهلي – مصر – الأسكندرية ) موضح به رقم الحساب .</p>
-      <p>5 – إعلام وراثة اصل+ صورة طبق الاصل .</p>
-      <p>6 – مستخرج من شهادة الوفاة ( اصل + صورة طبق الأصل )</p>
-      <p>7 – قرار الوصاية ( أصل + صورة طبق الأصل )</p>
-      <p>8 – مستخرج رسمي من شهادات ميلاد الأبناء ( اصل + صورة طبق الأصل )</p>
-      <p>9 – شهادات قيد ( مدارس / كليات ) اصل + صورة طبق الأصل</p>
-      <p>10 – إقرار بالشهر العقاري للزوجة بعدم الزواج و للبنات بعدم الزواج والعمل . اصل + صورة طبق الاصل .</p>
-      <p>11 – صورة الرقم القومي للزوجة … اصل + صورة طبق الأصل</p>
-      <p>12 – صورق الرقم القومي للوصي .. اصل + صورة طبق الأصل</p>
-      <p>13 – صورة الرقم القومي للأبناء البلغ .. اصل + صورة طبق الأصل</p>
-      <p>14 – حركة تأمينية للأبناء الإناث حالي وسابق عن نفسها وعن والديها . اصل + صورة طبق الأصل</p>
-      <p>15 – قيد عائلي للزوج .. اصل + صورة طبق الأصل</p>
-      <p>16 – بيان من التأمينات … اصل + صورة طبق الأصل</p>
-      <p>17 – شهادة تحركات للطبيب في حالة الوفاه خارج الجمهورية … اصل + صورة طبق الأصل</p>
-      <p>18 – اقرار من الشهر العقاري للزوجة بعدم الزواج بعد وفاة الطبيب بعد انتهاء شهور العدة اصل + صورة طبق الأصل</p>
-      <p><strong>تاسعاً : الأوراق المطلوبة لإعانة الوفاة من النقابة :- </strong></p>
-      <p>1 – شهادة الوفاة اصل + صورة طبق الأصل</p>
-      <p>2 – صورة طبق الأصل من بطاقة الرقم القومي للمستفيد</p>
-      <p>3 – إعلام وراثة أصل + صورة طبق الأصل</p>
-      <p>الأوراق المطلوبة للحصول على منحة الرعاية الأجتماعية :-</p>
-      <p>1 – صورة كارنية النقابة ساري</p>
-      <p>2 – صورة البطاقة الرقم القومي للطبيب والمستفيد</p>
-      <p>3 – صورة شهادات ميلاد الأولاد</p>
-      <p>4 – شهادة قيد بالدراسة حديثة للأبناء</p>
-      <p>5 – صورة طبق الأصل من قسيمة الوفاة او الطلاق</p>
-      <p>6 – سداد اشتراك النقابة حتى العام الحالي</p>
-      <p>7 – اعتماد الأوراق من النقابة الفرعية التابع لها الطبيب او الطبيبة .</p>
-      <p><strong>مع اطيب أمنيات </strong></p>
+    <div class="accordion-container">
+      <div class="accordion-head" (click)="switchGeneView()">
+        <span class="head">
+          اولاً : الأوراق المطلوبة للقيد بسجلات النقابة ووزارة الصحة :-
+        </span>
+        <span *ngIf="!general" class="icon"
+          ><i class="fa fa-chevron-down" aria-hidden="true"></i
+        ></span>
+        <span *ngIf="general" class="icon"
+          ><i class="fa fa-chevron-up" aria-hidden="true"></i
+        ></span>
       </div>
-
-
-  <!-- <h2 class="categories-title"></h2> -->
-  <!-- <div [ngSwitch]="display" class="user-content">
-    <div *ngSwitchCase="'list'" class="list-view">
-      <div class="list-item" *ngFor="let post of profile.posts">
-        <ion-card>
-          <ion-card-content>
-            <p class="item-text">
-              {{post.description}}
-            </p>
-          </ion-card-content>
-        </ion-card>
+      <div class="accordion-body" *ngIf="general">
+        <ion-grid class="name">
+          <ion-row>
+            <ion-col col-12>
+              <p>عدد (2) اصل شهادة البكالوريوس</p>
+              <p>عدد (2) صورة بطاقة الرقم القومي</p>
+              <p>عدد (2) صورة الموقف من التجنيد للذكور + الأصل للإطلاع</p>
+              <p>عدد (1) فيش وتشبية حديث موجه للنقابة</p>
+              <p>عدد (5) صورة شخصية 4 *&nbsp; 6</p>
+              <p>عدد (2) صورة شهادة الميلاد</p>
+              <p>مبلغ 400 جنية تقريبا للقيد بالنقابة ووزارة الصحة .</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </div>
     </div>
-  </div> -->
-  <!-- <h4 class="categories-title">أعضاء </h4> -->
-  <!-- <div [ngSwitch]="display" class="user-content">
-    <div *ngSwitchCase="'list'" class="list-view">
-      <div class="list-item" *ngFor="let post of profile.vets">
-        <ion-card>
-          <ion-card-content>
-            <p class="item-text">
-              {{post.description}}
-            </p>
-          </ion-card-content>
-        </ion-card>
+
+    <div class="accordion-container">
+      <div class="accordion-head" (click)="switchSecView()">
+        <span class="head">
+          ثانياً : الأوراق المطلوبة للقيد بسجل الأخصائيين بالنقابة:-
+        </span>
+        <span *ngIf="!second" class="icon"
+          ><i class="fa fa-chevron-down" aria-hidden="true"></i
+        ></span>
+        <span *ngIf="second" class="icon"
+          ><i class="fa fa-chevron-up" aria-hidden="true"></i
+        ></span>
+      </div>
+      <div class="accordion-body" *ngIf="second">
+        <ion-grid class="name">
+          <ion-row>
+            <ion-col col-12>
+              <ul>
+                <li>
+                  عدد (1) اصل شهادة التخصص للدبلوم – الماجستير – الدكتوراة وصورة
+                  شخصية حديثة 4 * 6
+                </li>
+                <li>
+                  سداد مبلغ 200 جنية رسم تسجيل بسجل الأخصائيين ( اول مرة )
+                </li>
+                <li>سداد مبلغ 100 جنية استخراج شهادة .</li>
+                <li>بشرط سداد اشتراك النقابة العامة حتى العام الحالي</li>
+              </ul>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </div>
     </div>
-  </div> -->
+
+    <div class="accordion-container">
+      <div class="accordion-head" (click)="switchThirdView()">
+        <span class="head">
+          ثالثاً : الأوراق المطلوبة للقيد بسجل العيادات البيطرية :
+        </span>
+        <span *ngIf="!third" class="icon"
+          ><i class="fa fa-chevron-down" aria-hidden="true"></i
+        ></span>
+        <span *ngIf="third" class="icon"
+          ><i class="fa fa-chevron-up" aria-hidden="true"></i
+        ></span>
+      </div>
+      <div class="accordion-body" *ngIf="third">
+        <ion-grid class="name">
+          <ion-row>
+            <ion-col col-12>
+              <ul>
+                <li>
+                  عقد ايجار موثق بالشهر العقاري موضح به الأستخدام عيادة بيطرية +
+                  صورة ضوئية من العقد
+                </li>
+                <li>اصل رسم هندسي موضح به مصدر المياة معتمد من مكتب هندسي</li>
+                <li>سداد اشتراك النقابة حتى العام الحالي</li>
+                <li>صورة البطاقة الضريبية</li>
+                <li>موافقة النقابة الفرعية</li>
+                <li>وصورة شخصية حديثة 4 * 6</li>
+                <li>سداد مبلغ 600 جنية رسم تسجيل العيادة البيطرية اول مرة</li>
+                <li>سداد مبلغ 500 جنية للتجديد</li>
+              </ul>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <div class="accordion-container">
+      <div class="accordion-head" (click)="switchFourthView()">
+        <span class="head">
+          الاوراق المطلوبة لاستخراج ترخيص مزاولة مهنة التحاليل الطبية بوزارة الصحة:
+        </span>
+        <span *ngIf="!fourth" class="icon"
+          ><i class="fa fa-chevron-down" aria-hidden="true"></i
+        ></span>
+        <span *ngIf="fourth" class="icon"
+          ><i class="fa fa-chevron-up" aria-hidden="true"></i
+        ></span>
+      </div>
+      <div class="accordion-body" *ngIf="fourth">
+        <ion-grid class="name">
+          <ion-row>
+            <ion-col col-12>
+              <p>1 – صورة البطاقة الشخصية</p>
+              <p>2 – صورة شهادة الميلاد</p>
+              <p>3 – اصل شهادة البكالوريوس</p>
+              <p>4 – نموذج 13 صحة</p>
+              <p>5 – عدد (3) صورة شخصية</p>
+              <p>6 – عدد (1) اصل شهادة التخصص (دبلوم – ماجستير – دكتوراه )</p>
+              <p>7 – المنهج الدراسي لشهادة التخصص</p>
+              <p>8 – اصل شهادة قيد بسجل الإخصائيين بالنقابة .</p>
+              <p>9 – الموقف من التجنيد للذكور ( اصل + صورة )</p>
+              <p>10 – ملف لحفظ المستندات</p>
+              <p>
+                11 – اصل صحيفة الحالة الجنائية موجه باسم الإدارة المركزية
+                للمؤسسات العلاجية والتراخيص الطبية بوزارة الصحة .
+              </p>
+              <p>
+                12 – ايصال اشتراك النقابة العامة والنقابة الفرعية للعام الحالي .
+              </p>
+              <p>13 – رسم تقديم الأوراق 800 جنية شاملة رسوم النقابة .</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <div class="accordion-container">
+      <div class="accordion-head" (click)="switchFifthView()">
+        <span class="head">
+          خامساً : الأوراق المطلوبة للإعانات المقدمة من النقابة : –
+        </span>
+        <span *ngIf="!fifth" class="icon"
+          ><i class="fa fa-chevron-down" aria-hidden="true"></i
+        ></span>
+        <span *ngIf="fifth" class="icon"
+          ><i class="fa fa-chevron-up" aria-hidden="true"></i
+        ></span>
+      </div>
+      <div class="accordion-body" *ngIf="fifth">
+        <ion-grid class="name">
+          <ion-row>
+            <ion-col col-12>
+              <p>1 – &nbsp;أصل تقرير طبي بالحالة بتاريخ حديث</p>
+              <p>2 – صورة من كارنية النقابة ( ساري )</p>
+              <p>3 – صورة ضوئية من بطاقة الرقم القومي</p>
+              <p>
+                4 – في حالة الولادة القيصرية فقط&nbsp; . صورة طبق الأصل منشهادة
+                ميلاد المولود .
+              </p>
+              <p>
+                5 – إفادة بان العضو غير مشترك بمشروع العلاج + ختم من المشروع على
+                طلب النقابة العامة .
+              </p>
+              <p>6 – تقرير موضح بالولادة القيصرية ( اصل + صورة طبق الاصل )</p>
+              <p>
+                7 – اعتماد الوراق السابقة من النقابة الفرعية التابع لها الطبيب .
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <div class="accordion-container">
+      <div class="accordion-head" (click)="switchSixthView()">
+        <span class="head">
+          سادساً : الأعانات المستحقة من النقابة مع عدم الأشتراك في مشروع العلاج
+          :-
+        </span>
+        <span *ngIf="!sixth" class="icon"
+          ><i class="fa fa-chevron-down" aria-hidden="true"></i
+        ></span>
+        <span *ngIf="sixth" class="icon"
+          ><i class="fa fa-chevron-up" aria-hidden="true"></i
+        ></span>
+      </div>
+      <div class="accordion-body" *ngIf="sixth">
+        <ion-grid class="name">
+          <ion-row>
+            <ion-col col-12>
+              <table class="table-responsive">
+                <tbody>
+                  <tr>
+                    <td width="343"><strong>المرض</strong></td>
+                    <td width="343"><strong>مبلغ العلاج</strong></td>
+                  </tr>
+                  <tr>
+                    <td width="343"><strong>زراعة الكبد</strong></td>
+                    <td width="343">5000 خمسة الاف جنية</td>
+                  </tr>
+                  <tr>
+                    <td width="343"><strong>قوقعة الأذن</strong></td>
+                    <td width="343">5000 خمسة الاف جنية</td>
+                  </tr>
+                  <tr>
+                    <td width="343"><strong>زراعة الكلى</strong></td>
+                    <td width="343">3000 ثلاثة الاف جنية</td>
+                  </tr>
+                  <tr>
+                    <td width="343"><strong>زراعة قرنية العين</strong></td>
+                    <td width="343">3000 ثلاثة الاف جنية</td>
+                  </tr>
+                  <tr>
+                    <td width="343"><strong>القلب المفتوح والاورام</strong></td>
+                    <td width="343">3000 ثلاثة الاف جنية</td>
+                  </tr>
+                  <tr>
+                    <td width="343"><strong>عمليات العظام الكبيرة</strong></td>
+                    <td width="343">1500 الف وخمسمائة جنية</td>
+                  </tr>
+                  <tr>
+                    <td width="343"><strong>دعامات القلب</strong></td>
+                    <td width="343">1000 الف جنية</td>
+                  </tr>
+                  <tr>
+                    <td width="343"><strong>الولادة القيصرية</strong></td>
+                    <td width="343">500 خمسمائة جنية</td>
+                  </tr>
+                  <tr>
+                    <td width="343"><strong>الأمراض المزمنة</strong></td>
+                    <td width="343">500 خمسمائة جنية</td>
+                  </tr>
+                  <tr>
+                    <td width="343"><strong>الفئات المستفيده</strong></td>
+                    <td width="343">الأطباء- الأبناء- الأزواج- الوالدان</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" width="685">
+                      <strong>مع عدم الصرف لمرض السكر والبروسيلا</strong>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <div class="accordion-container">
+      <div class="accordion-head" (click)="switchSevenView()">
+        <span class="head">
+          سابعاً : الأوراق المطلوبة لإعانات المهن الطبية :
+        </span>
+        <span *ngIf="!seventh" class="icon"
+          ><i class="fa fa-chevron-down" aria-hidden="true"></i
+        ></span>
+        <span *ngIf="seventh" class="icon"
+          ><i class="fa fa-chevron-up" aria-hidden="true"></i
+        ></span>
+      </div>
+      <div class="accordion-body" *ngIf="seventh">
+        <ion-grid class="name">
+          <ion-row>
+            <ion-col col-12>
+              <p>1 – تقرير طبي بالحالة ( اصل + صورة طبق الأصل )</p>
+              <p>2 – صورة طبق الاصل من الرقم القومي وكارنية النقابة .</p>
+              <p>
+                3 – صورة طبق الأصل من شهادة ميلاد المولود في حالة الوضع القيصري
+                .
+              </p>
+              <p>4 – افادة من مشروع العلاج بعدم الأشتراك .</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <div class="accordion-container">
+      <div class="accordion-head" (click)="switchEightView()">
+        <span class="head">
+          ثامناً : الأوراق المطلوبة لإعانات الوفاة من اتحاد المهن الطبية :-
+        </span>
+        <span *ngIf="!eigth" class="icon"
+          ><i class="fa fa-chevron-down" aria-hidden="true"></i
+        ></span>
+        <span *ngIf="eigth" class="icon"
+          ><i class="fa fa-chevron-up" aria-hidden="true"></i
+        ></span>
+      </div>
+      <div class="accordion-body" *ngIf="eigth">
+        <ion-grid class="name">
+          <ion-row>
+            <ion-col col-12>
+              <p>1 – صورة طبق الأصل من الرقم القومي للعضو .</p>
+              <p>2 – استمارة أ.ن ( من النقابة العامة )</p>
+              <p>3 – استمارة طلب معاش ( أعضاء – اسر ) من الأتحاد .</p>
+              <p>
+                4 – أصل خطاب من البنك ( الأهلي – مصر – الأسكندرية ) موضح به رقم
+                الحساب .
+              </p>
+              <p>5 – إعلام وراثة اصل+ صورة طبق الاصل .</p>
+              <p>6 – مستخرج من شهادة الوفاة ( اصل + صورة طبق الأصل )</p>
+              <p>7 – قرار الوصاية ( أصل + صورة طبق الأصل )</p>
+              <p>
+                8 – مستخرج رسمي من شهادات ميلاد الأبناء ( اصل + صورة طبق الأصل )
+              </p>
+              <p>9 – شهادات قيد ( مدارس / كليات ) اصل + صورة طبق الأصل</p>
+              <p>
+                10 – إقرار بالشهر العقاري للزوجة بعدم الزواج و للبنات بعدم
+                الزواج والعمل . اصل + صورة طبق الاصل .
+              </p>
+              <p>11 – صورة الرقم القومي للزوجة … اصل + صورة طبق الأصل</p>
+              <p>12 – صورق الرقم القومي للوصي .. اصل + صورة طبق الأصل</p>
+              <p>
+                13 – صورة الرقم القومي للأبناء البلغ .. اصل + صورة طبق الأصل
+              </p>
+              <p>
+                14 – حركة تأمينية للأبناء الإناث حالي وسابق عن نفسها وعن والديها
+                . اصل + صورة طبق الأصل
+              </p>
+              <p>15 – قيد عائلي للزوج .. اصل + صورة طبق الأصل</p>
+              <p>16 – بيان من التأمينات … اصل + صورة طبق الأصل</p>
+              <p>
+                17 – شهادة تحركات للطبيب في حالة الوفاه خارج الجمهورية … اصل +
+                صورة طبق الأصل
+              </p>
+              <p>
+                18 – اقرار من الشهر العقاري للزوجة بعدم الزواج بعد وفاة الطبيب
+                بعد انتهاء شهور العدة اصل + صورة طبق الأصل
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <div class="accordion-container">
+      <div class="accordion-head" (click)="switchNinethView()">
+        <span class="head">
+          تاسعاً : الأوراق المطلوبة لإعانة الوفاة من النقابة :-
+        </span>
+        <span *ngIf="!ninth" class="icon"
+          ><i class="fa fa-chevron-down" aria-hidden="true"></i
+        ></span>
+        <span *ngIf="ninth" class="icon"
+          ><i class="fa fa-chevron-up" aria-hidden="true"></i
+        ></span>
+      </div>
+      <div class="accordion-body" *ngIf="ninth">
+        <ion-grid class="name">
+          <ion-row>
+            <ion-col col-12>
+              <p>1 – شهادة الوفاة اصل + صورة طبق الأصل</p>
+              <p>2 – صورة طبق الأصل من بطاقة الرقم القومي للمستفيد</p>
+              <p>3 – إعلام وراثة أصل + صورة طبق الأصل</p>
+              <p>الأوراق المطلوبة للحصول على منحة الرعاية الأجتماعية :-</p>
+              <p>1 – صورة كارنية النقابة ساري</p>
+              <p>2 – صورة البطاقة الرقم القومي للطبيب والمستفيد</p>
+              <p>3 – صورة شهادات ميلاد الأولاد</p>
+              <p>4 – شهادة قيد بالدراسة حديثة للأبناء</p>
+              <p>5 – صورة طبق الأصل من قسيمة الوفاة او الطلاق</p>
+              <p>6 – سداد اشتراك النقابة حتى العام الحالي</p>
+              <p>
+                7 – اعتماد الأوراق من النقابة الفرعية التابع لها الطبيب او
+                الطبيبة .
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
+  <div class="user-details">
+    <!-- <p><strong>مع اطيب أمنيات </strong></p> -->
+  </div>
 </ion-content>
