@@ -1,30 +1,103 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
-import { BlogFeedPage } from '../blog-feed/blog-feed';
+import { BlogPostPage } from '../blog-post/blog-post';
 import { WordpressLoginPage } from '../wordpress-login/wordpress-login';
-import { BlogCategoriesPage } from '../blog-categories/blog-categories';
-import { BlogCustomPagesPage } from '../blog-custom-pages/blog-custom-pages';
+import 'rxjs/add/operator/map';
+import { NavController, LoadingController, NavParams } from 'ionic-angular';
+import { WordpressService } from '../wordpress-integration.service';
+import { BlogFeedModel } from '../blog-post.model';
 
 @Component({
   selector: 'wordpress-menu-page',
   templateUrl: 'wordpress-menu.html'
 })
 export class WordpressMenuPage {
-  items: Array<{title: string, note?: string, component: any}>;
+  feed: BlogFeedModel = new BlogFeedModel();
+  loggedUser: boolean = false;
+  categoryId: number;
+  categoryTitle: string;
+  current_posts_page = 1;
+  morePagesAvailable:boolean = true;
+
+  news1: any;
+  news2: any;
+  news3: any;
 
   constructor(
-    public nav: NavController
-  ) {}
-
-  ionViewWillEnter(){
-    this.items = [
-      { title: "أخر الأخبار", component: BlogFeedPage },
-      { title: "التصنيفات", component: BlogCategoriesPage },
-    ];
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public loadingCtrl: LoadingController,
+    public wordpressService: WordpressService
+  ) {
+    // this.tab1Root = ProfilePage;
+    // this.tab2Root = shortdesPage;
   }
 
-  itemTapped(event, item) {
-    this.nav.push(item.component);
+  ionViewWillEnter() {
+    this.wordpressService.getUser()
+    .then(
+      data => this.loggedUser = true,
+      error => this.loggedUser = false
+    );
+
+
+    //if we are browsing a category
+    this.categoryId = this.navParams.get('id');
+    this.categoryTitle = this.navParams.get('title');
+
+    if(!(this.feed.posts.length > 0)){
+      let loading = this.loadingCtrl.create();
+      loading.present();
+
+      this.wordpressService.getRecentPosts(this.categoryId)
+      .subscribe(data => {
+
+        this.feed.posts_count = Number(data.headers.get('x-wp-total'));
+        this.feed.posts_pages = Number(data.headers.get('x-wp-totalpages'));
+
+        for(let post of data.json()){
+          post.excerpt.rendered = post.excerpt.rendered.split('<a')[0] + "</p>";
+          this.feed.posts.push(post);
+        }
+        loading.dismiss();
+      });
+    }
+  }
+
+  readMore(post) {
+		this.navCtrl.push(BlogPostPage, {
+		  post: post
+		});
+  }
+
+  loadMorePosts(infiniteScroll) {
+
+    this.morePagesAvailable = this.feed.posts_pages > this.current_posts_page;
+    if(this.morePagesAvailable)
+    {
+      this.current_posts_page +=1;
+
+      this.wordpressService.getRecentPosts(this.categoryId, this.current_posts_page)
+      .subscribe(data => {
+        for(let post of data.json()){
+          post.excerpt.rendered = post.excerpt.rendered.split('<a')[0] + "</p>";
+          this.feed.posts.push(post);
+        }
+      }, err => {
+        console.log(err);
+      })
+    }
+  }
+
+
+  logOut(){
+    this.wordpressService.logOut()
+    .then(
+      res => this.navCtrl.push(WordpressLoginPage),
+      err => console.log('Error in log out')
+    )
+  }
+
+  goToLogin(){
+    this.navCtrl.push(WordpressLoginPage);
   }
 }

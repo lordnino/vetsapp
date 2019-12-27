@@ -1,3 +1,5 @@
+import { PrivateInstitutionsPage } from './../pages/private-institutions/private-institutions';
+import { BeAMemberPage } from './../pages/be-a-member/be-a-member';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav, App, ToastController } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -65,13 +67,13 @@ export class MyApp {
           platform.setDir('ltr', true);
         }
         Observable.forkJoin(
-          this.translate.get('MAINHOME'),
-          this.translate.get('HOME'),
-          this.translate.get('FORMS'),
-          this.translate.get('FUNCTIONALITIES'),
-          this.translate.get('LAYOUTS'),
-          this.translate.get('MENU_1'),
-          this.translate.get('MENU_3'),
+          this.translate.get('MAINHOME'), // valid
+          this.translate.get('HOME'), // valid
+          this.translate.get('FORMS'), // valid
+          this.translate.get('FUNCTIONALITIES'), // valid
+          this.translate.get('LAYOUTS'), // valid
+          this.translate.get('MENU_1'),  // valid
+          this.translate.get('MENU_3'), // valid
           this.translate.get('MENU_4'),
           this.translate.get('FIREBASE_INTEGRATION'),
           // this.translate.get('SETTINGS')
@@ -84,12 +86,12 @@ export class MyApp {
             this.pushPages = [
             { title: data[1], icon: '', component: TabsNavigationPage },
             { title: data[2], icon: '', component: onlineServicesPage },
-            { title: data[3], icon: '', component: TabsNavigationPage },
+            { title: data[3], icon: '', component: WordpressMenuPage },
             { title: data[4], icon: '', component: List2Page },
             { title: data[5], icon: '', component: LayoutsPage },
-            { title: data[6], icon: '', component: TabsNavigationPage },
-            { title: data[7], icon: '', component: TabsNavigationPage },
-            { title: data[8], icon: '', component: TabsNavigationPage }
+            { title: data[6], icon: '', component: BeAMemberPage },
+            { title: data[7], icon: '', component: PrivateInstitutionsPage },
+            { title: data[8], icon: '', component: FirebaseLoginPage }
            //, { title: data[9], icon: '', component: SettingsPage }
             ];
           });

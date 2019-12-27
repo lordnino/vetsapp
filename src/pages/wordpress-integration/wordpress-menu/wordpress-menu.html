@@ -1,24 +1,42 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>أخر الأخبار</ion-title>
+    <ion-title *ngIf="!categoryTitle">أخر الأخبار</ion-title>
+    <ion-title *ngIf="categoryTitle">{{categoryTitle}} </ion-title>
+    <ion-buttons *ngIf="loggedUser" end>
+      <button ion-button icon-only (click)="logOut()">
+        <ion-icon class="toolbar-icon" name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+    
   </ion-navbar>
 </ion-header>
 
-<ion-content class="wordpress-menu-content">
-  <ion-list class="wordpress-menu-list">
-    <button class="list-item" ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-row no-padding>
-        <ion-col no-padding class="item-content">
-          <h3 class="item-title">{{item.title}}</h3>
-          <span class="item-note" *ngIf="item.note">{{item.note}}</span>
+<ion-content class="content">
+  <div class="feed-item" *ngFor="let post of feed.posts">
+    <ion-card >
+      <background-image (click)="readMore(post)" class="item-image" *ngIf="post._embedded['wp:featuredmedia']" [src]="post._embedded['wp:featuredmedia'][0].source_url"></background-image>
+      <ion-card-content>
+        <ion-card-title class="item-title" [innerHTML]="post.title.rendered"></ion-card-title>
+        <p class="item-text" [innerHTML]="post.excerpt.rendered"></p>
+      </ion-card-content>
+      <ion-row no-padding class="actions-row">
+        <ion-col class="item-date" no-padding text-left>
+          <span>
+            {{post.date.split('T')[0]}}
+          </span>
         </ion-col>
-        <ion-col no-padding width-10 class="item-icon">
-          <ion-icon name="arrow-forward"></ion-icon>
+        <ion-col no-padding text-right>
+          <button ion-button small class="read-more" (click)="readMore(post)" icon-start>
+             المزيد
+          </button>
         </ion-col>
       </ion-row>
-    </button>
-  </ion-list>
+    </ion-card>
+  </div>
+  <ion-infinite-scroll [enabled]="morePagesAvailable" (ionInfinite)="loadMorePosts($event)">
+    <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="Loading more posts...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
