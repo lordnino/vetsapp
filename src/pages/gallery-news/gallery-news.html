@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ألبوم الصور</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content">
+  <div class="feed-item" *ngFor="let image of images">
+    <ion-card >
+      <background-image (click)="openLink(image)" class="item-image" *ngIf="image?.guid?.rendered" [src]="image?.guid?.rendered"></background-image>
+    </ion-card>
+  </div>
+</ion-content>

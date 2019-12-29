@@ -82,6 +82,7 @@ export class onlineServicesPage {
     //   list: this.profile.followers
     // });
   }
+  
   OpenUrl() {
     const browser = this.iab.create('https://payments.egy-vet-synd.org/vetonline/', '_blank');
     browser.show()
@@ -121,4 +122,9 @@ export class onlineServicesPage {
       });
   }
 
+  OpenEditInfoUrl() {
+    //http://41.41.141.188:1473/vetonline/update_member.php
+    const browser = this.iab.create('https://payments.egy-vet-synd.org/vetonline/update_member.php', '_blank');
+    browser.show()
+  }
 }

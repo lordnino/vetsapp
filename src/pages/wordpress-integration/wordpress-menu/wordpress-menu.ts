@@ -13,7 +13,7 @@ import { BlogFeedModel } from '../blog-post.model';
 export class WordpressMenuPage {
   feed: BlogFeedModel = new BlogFeedModel();
   loggedUser: boolean = false;
-  categoryId: number;
+  categoryId: number = 98;
   categoryTitle: string;
   current_posts_page = 1;
   morePagesAvailable:boolean = true;
@@ -41,7 +41,6 @@ export class WordpressMenuPage {
 
 
     //if we are browsing a category
-    this.categoryId = this.navParams.get('id');
     this.categoryTitle = this.navParams.get('title');
 
     if(!(this.feed.posts.length > 0)){

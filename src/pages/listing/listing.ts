@@ -1,3 +1,4 @@
+import { LatestNewsTabsPage } from './../latest-news-tabs/latest-news-tabs';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -50,7 +51,7 @@ export class ListingPage {
           this.nav.push(onlineServicesPage);
           break;
       case "Committees"://أخبار النقابة
-          this.nav.push(WordpressMenuPage);
+          this.nav.push(LatestNewsTabsPage);
           break;
       case "Scientific Center"://المركز العلمي
           this.nav.push(List2Page);

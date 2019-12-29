@@ -24,6 +24,13 @@ export class WordpressService {
     .map(res => res);
   }
 
+  getGallery() {
+    return this.http.get(
+      environment.wordpress_rest_api_url
+      + 'media')
+    .map(res => res);
+  }
+
   getCustomPages(){
     return this.http.get(
       environment.wordpress_rest_api_url + 'pages')

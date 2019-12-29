@@ -1,15 +1,12 @@
 <ion-header>
   <ion-navbar>
-    <ion-title *ngIf="!categoryTitle">أخر الأخبار</ion-title>
-    <ion-title *ngIf="categoryTitle">{{categoryTitle}} </ion-title>
-    <ion-buttons *ngIf="loggedUser" end>
-      <button ion-button icon-only (click)="logOut()">
-        <ion-icon class="toolbar-icon" name="log-out"></ion-icon>
-      </button>
-    </ion-buttons>
-    
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>أخر الأخبار</ion-title>
   </ion-navbar>
 </ion-header>
+
 
 <ion-content class="content">
   <div class="feed-item" *ngFor="let post of feed.posts">

@@ -1,3 +1,8 @@
+import { CommitteesPage } from './../pages/committees/committees';
+import { GalleryNewsPage } from './../pages/gallery-news/gallery-news';
+import { VideosNewsPage } from './../pages/videos-news/videos-news';
+import { EventsNewsPage } from './../pages/events-news/events-news';
+import { LatestNewsTabsPage } from './../pages/latest-news-tabs/latest-news-tabs';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -197,7 +202,12 @@ export function createTranslateLoader(http: HttpClient) {
     Rating,
     GoogleMap,
     BeAMemberPage,
-    PrivateInstitutionsPage
+    PrivateInstitutionsPage,
+    LatestNewsTabsPage,
+    EventsNewsPage,
+    VideosNewsPage,
+    GalleryNewsPage,
+    CommitteesPage
   ],
   imports: [
     BrowserModule,
@@ -280,7 +290,12 @@ export function createTranslateLoader(http: HttpClient) {
     PreviousCouncilsPage,
     CouncilGoalsPage,
     BeAMemberPage,
-    PrivateInstitutionsPage
+    PrivateInstitutionsPage,
+    LatestNewsTabsPage,
+    EventsNewsPage,
+    VideosNewsPage,
+    GalleryNewsPage,
+    CommitteesPage
   ],
   providers: [
     FeedService,

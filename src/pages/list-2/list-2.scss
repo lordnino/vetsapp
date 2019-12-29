@@ -1,38 +1,72 @@
 // Common list styles can be found in "./common.styles/layouts/lists"
+// list-2-page {
+// 	.list-mini-content
+// 	{
+// 		background-color: color($colors, background, base);
+
+// 		.list-mini
+// 		{
+// 			@include layout-list-styles($theme-color-1, $white-d);
+
+// 			ion-list {
+// 				.list-item
+// 				{
+// 					.content-row
+// 					{
+// 						.item-title{
+// 							overflow: hidden;
+// 							text-overflow: ellipsis;
+// 							white-space: nowrap;
+// 						}
+
+// 						&.one-line
+// 						{
+// 							align-items: center;
+
+// 							.item-description
+// 							{
+// 								overflow: hidden;
+// 								text-overflow: ellipsis;
+// 								white-space: nowrap;
+// 							}
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
 list-2-page {
-	.list-mini-content
-	{
+	.content {
 		background-color: color($colors, background, base);
-
-		.list-mini
-		{
-			@include layout-list-styles($theme-color-1, $white-d);
-
-			ion-list {
-				.list-item
-				{
-					.content-row
-					{
-						.item-title{
-							overflow: hidden;
-							text-overflow: ellipsis;
-							white-space: nowrap;
-						}
-
-						&.one-line
-						{
-							align-items: center;
-
-							.item-description
-							{
-								overflow: hidden;
-								text-overflow: ellipsis;
-								white-space: nowrap;
-							}
-						}
-					}
-				}
-			}
+	
+		.feed-item {
+		  @include basic-card-styles($white-d);
+	
+		  .item-image {
+			height: 160px;
+			background-position-x: center;
+			background-position-y: center;
+		  }
+	
+		  .item-title {
+			margin: 0px;
+			margin-bottom: 12px;
+			padding: 0px;
+			letter-spacing: 1.1px;
+			color: $theme-color-2;
+		  }
+		  .item-date {
+			align-self: center;
+			color: $theme-color-2;
+			font-style: italic;
+		  }
 		}
-	}
+	  }
+	
+	  [ion-button].read-more {
+		@include call-to-action-button-styles(color($colors, button-alt), $white);
+		font-size: 1.4rem;
+	  }
 }

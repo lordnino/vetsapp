@@ -1,23 +1,26 @@
-import { WordpressLoginPage } from './../wordpress-integration/wordpress-login/wordpress-login';
 import { BlogPostPage } from './../wordpress-integration/blog-post/blog-post';
 import { WordpressService } from './../wordpress-integration/wordpress-integration.service';
 import { BlogFeedModel } from './../wordpress-integration/blog-post.model';
+import { WordpressLoginPage } from './../wordpress-integration/wordpress-login/wordpress-login';
 import { Component } from '@angular/core';
-// import { BlogPostPage } from '../blog-post/blog-post';
-// import { WordpressLoginPage } from '../wordpress-login/wordpress-login';
-import 'rxjs/add/operator/map';
-import { NavController, LoadingController, NavParams } from 'ionic-angular';
-// import { WordpressService } from '../wordpress-integration.service';
-// import { BlogFeedModel } from '../blog-post.model';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+
+/**
+ * Generated class for the EventsNewsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @Component({
-  selector: 'list-2-page',
-  templateUrl: 'list-2.html'
+  selector: 'page-events-news',
+  templateUrl: 'events-news.html',
 })
-export class List2Page {
+export class EventsNewsPage {
+
   feed: BlogFeedModel = new BlogFeedModel();
   loggedUser: boolean = false;
-  categoryId: number = 102;
+  categoryId: number = 106;
   categoryTitle: string;
   current_posts_page = 1;
   morePagesAvailable:boolean = true;

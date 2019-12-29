@@ -1,15 +1,14 @@
+import { WordpressLoginPage } from './../wordpress-integration/wordpress-login/wordpress-login';
+import { BlogPostPage } from './../wordpress-integration/blog-post/blog-post';
+import { WordpressService } from './../wordpress-integration/wordpress-integration.service';
+import { BlogFeedModel } from './../wordpress-integration/blog-post.model';
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
-import { SchedulePage } from '../schedule/schedule';
-import { List1Page } from '../list-1/list-1';
-import { List2Page } from '../list-2/list-2';
-import { GridPage } from '../grid/grid';
-import { NotificationsPage } from '../notifications/notifications';
-import { ProfilePage } from '../profile/profile';
-import { Observable } from 'rxjs/Observable';
-import { TranslateService } from '@ngx-translate/core';
-import { BranchPage } from '../branch/branch';
+// import { BlogPostPage } from '../blog-post/blog-post';
+// import { WordpressLoginPage } from '../wordpress-login/wordpress-login';
+import 'rxjs/add/operator/map';
+import { NavController, LoadingController, NavParams } from 'ionic-angular';
+// import { WordpressService } from '../wordpress-integration.service';
+// import { BlogFeedModel } from '../blog-post.model';
 
 
 @Component({
@@ -17,35 +16,92 @@ import { BranchPage } from '../branch/branch';
   templateUrl: 'layouts.html'
 })
 export class LayoutsPage {
-  items: Array<{title: string, note?: string, component: any}>;
+  feed: BlogFeedModel = new BlogFeedModel();
+  loggedUser: boolean = false;
+  categoryId: number = 113;
+  categoryTitle: string;
+  current_posts_page = 1;
+  morePagesAvailable:boolean = true;
+
+  news1: any;
+  news2: any;
+  news3: any;
 
   constructor(
-    public nav: NavController,
-    public translate: TranslateService
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public loadingCtrl: LoadingController,
+    public wordpressService: WordpressService
   ) {
+    // this.tab1Root = ProfilePage;
+    // this.tab2Root = shortdesPage;
   }
 
-  ionViewWillEnter(){
-    Observable.forkJoin(
-      this.translate.get('Area1'),
-      this.translate.get('Area2'),
-      this.translate.get('Area3'),
-      this.translate.get('Area4'),
-      this.translate.get('Area5'),
-      this.translate.get('Area6')
-    ).subscribe(data => {
-      this.items = [
-        { title: data[0], component: BranchPage },
-        { title: data[1], component: List1Page },
-        { title: data[2], component: List2Page },
-        { title: data[3], component: GridPage },
-        { title: data[4], component: NotificationsPage },
-        { title: data[5], component: ProfilePage }
-      ];
-    });
+  ionViewWillEnter() {
+    this.wordpressService.getUser()
+    .then(
+      data => this.loggedUser = true,
+      error => this.loggedUser = false
+    );
+
+
+    //if we are browsing a category
+    this.categoryTitle = this.navParams.get('title');
+
+    if(!(this.feed.posts.length > 0)){
+      let loading = this.loadingCtrl.create();
+      loading.present();
+
+      this.wordpressService.getRecentPosts(this.categoryId)
+      .subscribe(data => {
+
+        this.feed.posts_count = Number(data.headers.get('x-wp-total'));
+        this.feed.posts_pages = Number(data.headers.get('x-wp-totalpages'));
+
+        for(let post of data.json()){
+          post.excerpt.rendered = post.excerpt.rendered.split('<a')[0] + "</p>";
+          this.feed.posts.push(post);
+        }
+        loading.dismiss();
+      });
+    }
   }
 
-  itemTapped(event, item) {
-    this.nav.push(item.component);
+  readMore(post) {
+		this.navCtrl.push(BlogPostPage, {
+		  post: post
+		});
+  }
+
+  loadMorePosts(infiniteScroll) {
+
+    this.morePagesAvailable = this.feed.posts_pages > this.current_posts_page;
+    if(this.morePagesAvailable)
+    {
+      this.current_posts_page +=1;
+
+      this.wordpressService.getRecentPosts(this.categoryId, this.current_posts_page)
+      .subscribe(data => {
+        for(let post of data.json()){
+          post.excerpt.rendered = post.excerpt.rendered.split('<a')[0] + "</p>";
+          this.feed.posts.push(post);
+        }
+      }, err => {
+        console.log(err);
+      })
+    }
+  }
+
+
+  logOut(){
+    this.wordpressService.logOut()
+    .then(
+      res => this.navCtrl.push(WordpressLoginPage),
+      err => console.log('Error in log out')
+    )
+  }
+
+  goToLogin(){
+    this.navCtrl.push(WordpressLoginPage);
   }
 }
