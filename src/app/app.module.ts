@@ -1,3 +1,4 @@
+import { SubUnionsNewsPage } from './../pages/sub-unions-news/sub-unions-news';
 import { CommitteesPage } from './../pages/committees/committees';
 import { GalleryNewsPage } from './../pages/gallery-news/gallery-news';
 import { VideosNewsPage } from './../pages/videos-news/videos-news';
@@ -207,7 +208,8 @@ export function createTranslateLoader(http: HttpClient) {
     EventsNewsPage,
     VideosNewsPage,
     GalleryNewsPage,
-    CommitteesPage
+    CommitteesPage,
+    SubUnionsNewsPage
   ],
   imports: [
     BrowserModule,
@@ -295,7 +297,8 @@ export function createTranslateLoader(http: HttpClient) {
     EventsNewsPage,
     VideosNewsPage,
     GalleryNewsPage,
-    CommitteesPage
+    CommitteesPage,
+    SubUnionsNewsPage
   ],
   providers: [
     FeedService,

@@ -1,0 +1,15 @@
+- we need a keyword so the user can search all the news for example 
+  http://egy-vet-synd.org/vet2/wp-json/wp/v2/posts?categories=98&keyword=اخبار
+
+- we need data for (بيانات النقابات الفرعية)
+
+- we need data for (وضع المستندات المطلوبة والقسم بدل من الصفحة المكررة)
+
+- we need data for (المجالس السابقه خطأ في البيانات وسيتم ارسال البيانات الفعلية)
+
+- we need the new color (تغيير اللون الرمادي الي لون آخر سيتم إرساله)
+
+- we need the names of the tabs, and the data in it ()اضافه اللوائح والقوانين (صفحة بداخلها خمس تابات)
+
+- in what pages the ads will be on and we need a link to get the ads images (اضافه مساحة إعلانية)
+

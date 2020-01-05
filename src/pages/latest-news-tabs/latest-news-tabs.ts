@@ -1,3 +1,4 @@
+import { SubUnionsNewsPage } from './../sub-unions-news/sub-unions-news';
 import { CommitteesPage } from './../committees/committees';
 import { GalleryNewsPage } from './../gallery-news/gallery-news';
 import { VideosNewsPage } from './../videos-news/videos-news';
@@ -31,6 +32,7 @@ export class LatestNewsTabsPage {
   tab3Root: any; // videos news done
   tab4Root: any; // gallery news done
   tab5Root: any;
+  tab6Root: any;
   prevoiusCouncils: any;
   councilGoals: any;
 
@@ -40,6 +42,7 @@ export class LatestNewsTabsPage {
     this.tab3Root = EventsNewsPage;
     this.tab4Root = VideosNewsPage;
     this.tab5Root = GalleryNewsPage;
+    this.tab6Root = SubUnionsNewsPage;
   }
 }
 
