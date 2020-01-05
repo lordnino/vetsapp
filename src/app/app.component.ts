@@ -71,8 +71,8 @@ export class MyApp {
           this.translate.get('HOME'), // valid
           this.translate.get('FORMS'), // valid
           this.translate.get('FUNCTIONALITIES'), // valid
-          this.translate.get('LAYOUTS'), // valid
           this.translate.get('MENU_1'),  // valid
+          this.translate.get('LAYOUTS'), // valid
           this.translate.get('MENU_3'), // valid
           this.translate.get('MENU_4'),
           this.translate.get('FIREBASE_INTEGRATION'),

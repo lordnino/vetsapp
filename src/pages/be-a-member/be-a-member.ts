@@ -43,4 +43,12 @@ export class BeAMemberPage {
     this.third = !this.third;
   }
 
+  switchFourthView() {
+    this.fourth = !this.fourth;
+  }
+
+  switchFifthView() {
+    this.fifth = !this.fifth;
+  }
+
 }

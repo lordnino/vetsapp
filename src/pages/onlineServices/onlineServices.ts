@@ -3,7 +3,7 @@ import { MenuController, SegmentButton, App, NavParams } from 'ionic-angular';
 import { FollowersPage } from '../followers/followers';
 import { SettingsPage } from '../settings/settings';
 import { SocialSharing } from '@ionic-native/social-sharing';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { InAppBrowser, InAppBrowserOptions } from '@ionic-native/in-app-browser';
 
 
 import 'rxjs/Rx';
@@ -84,7 +84,14 @@ export class onlineServicesPage {
   }
   
   OpenUrl() {
-    const browser = this.iab.create('https://payments.egy-vet-synd.org/vetonline/', '_blank');
+    let options : InAppBrowserOptions = {
+      location : 'yes',//Or 'no' 
+      hidden : 'no', //Or  'yes'
+      zoom : 'yes',//Android only ,shows browser zoom controls 
+      hideurlbar:'yes',//Or 'no'
+  
+    };
+    const browser = this.iab.create('https://payments.egy-vet-synd.org/vetonline/', '_blank', options);
     browser.show()
   }
 
@@ -124,7 +131,14 @@ export class onlineServicesPage {
 
   OpenEditInfoUrl() {
     //http://41.41.141.188:1473/vetonline/update_member.php
-    const browser = this.iab.create('https://payments.egy-vet-synd.org/vetonline/update_member.php', '_blank');
+    let options : InAppBrowserOptions = {
+      location : 'yes',//Or 'no' 
+      hidden : 'no', //Or  'yes'
+      zoom : 'yes',//Android only ,shows browser zoom controls 
+      hideurlbar:'yes',//Or 'no'
+  
+    };
+    const browser = this.iab.create('https://payments.egy-vet-synd.org/vetonline/update_member.php', '_blank', options);
     browser.show()
   }
 }

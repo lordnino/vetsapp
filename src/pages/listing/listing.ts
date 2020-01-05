@@ -27,7 +27,7 @@ export class ListingPage {
   constructor(
     public nav: NavController,
     public listingService: ListingService
-  ) {}
+  ) { }
 
   ionViewDidLoad() {
     this.listingService
@@ -48,29 +48,29 @@ export class ListingPage {
         this.nav.push(TabsNavigationPage);
         break;
       case "Services"://خدمات أون لاين
-          this.nav.push(onlineServicesPage);
-          break;
+        this.nav.push(onlineServicesPage);
+        break;
       case "Committees"://أخبار النقابة
-          this.nav.push(LatestNewsTabsPage);
-          break;
-      case "Scientific Center"://المركز العلمي
-          this.nav.push(List2Page);
-          break;
+        this.nav.push(LatestNewsTabsPage);
+        break;
       case "Syndicates"://النقابات الفرعية
-          this.nav.push(LayoutsPage);
-          break;
+        this.nav.push(LayoutsPage);
+        break;
+      case "Scientific Center"://المركز العلمي
+        this.nav.push(List2Page);
+        break;
       case "Veterinary Authorities"://كيف تصبح عضو 
-          //this.nav.push(WordpressMenuPage);
-          this.nav.push(BeAMemberPage);
-          break;
+        //this.nav.push(WordpressMenuPage);
+        this.nav.push(BeAMemberPage);
+        break;
       case "Private Institutions"://الصناديق التكافلية 
-          //this.nav.push(WordpressMenuPage);
-          this.nav.push(PrivateInstitutionsPage);
-          break;
+        //this.nav.push(WordpressMenuPage);
+        this.nav.push(PrivateInstitutionsPage);
+        break;
       case "Contact us":// إتصل بنا
-          this.nav.push(FirebaseLoginPage);
-          break;
-      
+        this.nav.push(FirebaseLoginPage);
+        break;
+
       default:
         break;
     }

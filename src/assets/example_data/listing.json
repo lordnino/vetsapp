@@ -41,12 +41,12 @@
             "image": "./assets/images/listing/200x200crossfit.png"
         },
         {
-            "title": "Scientific Center",
-            "image": "./assets/images/listing/200x200futbol.png"
-        },
-        {
             "title": "Syndicates",
             "image": "./assets/images/listing/200x200running.png"
+        },
+        {
+            "title": "Scientific Center",
+            "image": "./assets/images/listing/200x200futbol.png"
         },
         {
             "title": "Veterinary Authorities",
